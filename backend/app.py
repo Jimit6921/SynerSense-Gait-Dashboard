@@ -1,11 +1,21 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import pdfplumber
 import pandas as pd
 import re
+import os
 
 app = Flask(__name__)
 CORS(app)
+
+# Serve frontend files
+@app.route('/')
+def serve_index():
+    return send_from_directory('../frontend/public', 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    return send_from_directory('../frontend/public', path)
 
 
 # ================= HELPERS =================
