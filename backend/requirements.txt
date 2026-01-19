@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pandas
+matplotlib
+pdfplumber
+python-multipart

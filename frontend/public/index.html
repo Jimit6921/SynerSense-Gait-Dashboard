@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SynerSense – Gait Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+<h1>🧠 SynerSense – Gait Analysis Dashboard</h1>
+
+<!-- ================= UPLOAD BOX ================= -->
+<div class="box">
+  <h3>Upload Files</h3>
+
+  <label>Pre Report (PDF)</label><br>
+  <input type="file" id="pre_report" accept="application/pdf"><br><br>
+
+  <label>Post Report (PDF)</label><br>
+  <input type="file" id="post_report" accept="application/pdf"><br><br>
+
+  <label>Pre Data (CSV)</label><br>
+  <input type="file" id="pre_csv" accept=".csv"><br><br>
+
+  <label>Post Data (CSV)</label><br>
+  <input type="file" id="post_csv" accept=".csv"><br><br>
+
+  <button onclick="upload()">📤 Upload & Analyze</button>
+</div>
+
+<!-- ================= PATIENT DETAILS ================= -->
+<div id="patientBox" class="box hidden">
+  <h3>Patient Details</h3>
+
+  <button onclick="showPatient('pre')">Pre Report</button>
+  <button onclick="showPatient('post')">Post Report</button>
+
+  <div id="patientDetails" style="margin-top:15px;"></div>
+</div>
+
+<!-- ================= TABLES ================= -->
+<div id="tables" class="box hidden">
+  <h3>Temporal & Spatial Parameters</h3>
+  <table id="temporal"></table>
+
+  <h3 style="margin-top:20px;">Kinematic Parameters</h3>
+  <table id="kinematic"></table>
+</div>
+
+<script src="/app.js"></script>
+
+</body>
+</html>
